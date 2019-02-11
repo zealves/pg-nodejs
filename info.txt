@@ -1,0 +1,31 @@
+https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize
+https://github.com/waiyaki/postgres-express-node-tutorial/blob/master/bin/www
+
+
+
+
+add column
+sequelize migration:generate --name tablenameDescritive
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    queryInterface.addColumn(
+      'Todos',
+      'detail',
+      Sequelize.STRING)
+  },
+
+  down: (queryInterface, Sequelize) => {
+    queryInterface.removeColumn(
+      'Todos',
+      'detail')
+  }
+};
+
+
+sequelize db:migrate 
+
+
+
+
+
